@@ -1,7 +1,7 @@
 ﻿# automatically generate ping_file and traceRoute_file
 # ping_date_time.txt and traceRoute_data_time.txt
-$ping_name = "ping" + (Get-Date -DisplayHint Date -Format "MM_dd_yyyy") + ".txt"
-$traceRoute_name = "traceRoute" + (Get-Date -DisplayHint Date -Format "MM_dd_yyyy") + ".txt"
+$ping_name = "ping" + (Get-Date -DisplayHint DateTime -Format "MM_dd_yyyy_HH_mm") + ".txt"
+$traceRoute_name = "traceRoute" + (Get-Date -DisplayHint DateTime -Format "MM_dd_yyyy_HH_mm") + ".txt"
 
 # read each website website.txt file and output to ping_file and traceRoute_file
 Test-Connection -ComputerName (Get-Content -Path .\website.txt)[0] > $ping_name
